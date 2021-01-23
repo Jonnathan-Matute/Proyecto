@@ -1,0 +1,7 @@
+{
+  "name": "ionic-proyecto-final",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
