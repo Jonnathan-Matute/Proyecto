@@ -25,7 +25,11 @@ const routes: Routes = [
   {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule), canActivate : [NologinGuard]
+  },  {
+    path: 'crear-recordatorio',
+    loadChildren: () => import('./crear-recordatorio/crear-recordatorio.module').then( m => m.CrearRecordatorioPageModule)
   }
+
 ];
 
 @NgModule({
