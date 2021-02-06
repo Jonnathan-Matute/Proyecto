@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>    
+    <ion-title>
+      Crear Recordatorio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating" >Actividad a Realizar</ion-label>
+    <ion-input [(ngModel)]="recor.actividad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" >Fecha</ion-label>
+    <ion-input [(ngModel)]="recor.fecha"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" >Direccion</ion-label>
+    <ion-input [(ngModel)]="recor.direccion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button color="secondary" expand="block" (click)="guardar()">Guardar Actividad</ion-button>
+  </ion-item>
+
+</ion-content>

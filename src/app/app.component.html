@@ -9,16 +9,22 @@
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false">
-            <ion-item [routerDirection]="'root'" [routerLink]="">
-              <ion-icon slot="start" [name]="'list'"></ion-icon>
+            <ion-item [routerDirection]="'root'" [routerLink]="'/home'">
+              <ion-icon slot="start" [name]="'home'"></ion-icon>
+              <ion-label>
+                Inicio
+              </ion-label>
+            </ion-item>
+            <ion-item [routerDirection]="'root'" [routerLink]="'/crear_recordatorio'">
+              <ion-icon slot="start" [name]="'home'"></ion-icon>
               <ion-label>
                 Crear Recordatorio
               </ion-label>
             </ion-item>
-            <ion-item [routerDirection]="'root'" [routerLink]="">
+            <ion-item [routerDirection]="'root'" [routerLink]="'/listar-recordatorios'">
               <ion-icon slot="start" [name]="'home'"></ion-icon>
               <ion-label>
-                Inicio
+                Recordatorios Guardados
               </ion-label>
             </ion-item>
           </ion-menu-toggle>

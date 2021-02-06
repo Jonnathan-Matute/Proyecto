@@ -18,6 +18,13 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 
 //crear el home de las paliculas
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
+// AngularFire
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 
 
 @NgModule({
@@ -32,6 +39,9 @@ import { HttpClientModule } from '@angular/common/http';
     //modulo de firebase
     AngularFireAuthModule,
     //
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
     HttpClientModule
   ],
   providers: [

@@ -10,7 +10,7 @@ import { NologinGuard } from "./guards/nologin.guard";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -25,7 +25,16 @@ const routes: Routes = [
   {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule), canActivate : [NologinGuard]
+  },
+  {
+    path: 'crear_recordatorio',
+    loadChildren: () => import('./recordatorio/recordatorio.module').then( m => m.RecordatorioPageModule)
+  },  {
+    path: 'listar-recordatorios',
+    loadChildren: () => import('./listar-recordatorios/listar-recordatorios.module').then( m => m.ListarRecordatoriosPageModule)
   }
+
+
 ];
 
 @NgModule({
