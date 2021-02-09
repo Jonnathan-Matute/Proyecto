@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RecordatorioPageRoutingModule } from './recordatorio-routing.module';
 
 import { RecordatorioPage } from './recordatorio.page';
+import { FileSizeFormatPipe } from './file-size-format.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { RecordatorioPage } from './recordatorio.page';
     IonicModule,
     RecordatorioPageRoutingModule
   ],
-  declarations: [RecordatorioPage]
+  declarations: [RecordatorioPage,FileSizeFormatPipe]
 })
 export class RecordatorioPageModule {}
