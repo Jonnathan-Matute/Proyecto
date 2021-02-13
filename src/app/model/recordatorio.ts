@@ -5,7 +5,7 @@ export class Recordatorio {
     actividad: string;
     fecha: Date;
     hora: Date;
-    Direccion: string;
+    direccion: string;
     deleted: boolean;
-    
+    fotoUrl: string;
 }
