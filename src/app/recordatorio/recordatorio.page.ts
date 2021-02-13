@@ -21,7 +21,6 @@ export class RecordatorioPage implements OnInit {
   
   newImage='';
   newFile='';
-  loading: any;
   
   constructor(public firestorageService: FirestorageService,  private route: ActivatedRoute, private router: Router,
     public recordatorioService: RecordatorioserviceService,private storage: AngularFireStorage, private database: AngularFirestore) {
@@ -62,7 +61,7 @@ export class RecordatorioPage implements OnInit {
       this.newFile = event.target.files[0];
       const reader = new FileReader();
       reader.onload = ((image)=> {
-        this.newImage = image.target.result as string;
+        this.recor.fotoUrl = image.target.result as string;
       });
       reader.readAsDataURL(event.target.files[0]);
     }

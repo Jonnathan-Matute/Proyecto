@@ -44,10 +44,24 @@
     <ion-input [(ngModel)]="recor.direccion"></ion-input>
   </ion-item>
   
-  <div>
-    <h5>Seleccionar imagen:</h5>
-    <input type="file" (change)="newImageUpload($event)">
-  </div>
+  <ion-item>
+    <ion-label>
+      Foto:
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <label for="file-upload">
+          <ion-icon slot="icon-only" name="images"></ion-icon>
+        </label>
+        <input type="file" accept=".png, .jpg" (change)="newImageUpload($event)" id="file-upload" style="display: none;">
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
+  <ion-item>
+    <img [src]="recor.fotoUrl">
+  </ion-item>
+
   <ion-item>
     <ion-button color="secondary" expand="block" (click)="guardar()">Guardar</ion-button>
   </ion-item>
