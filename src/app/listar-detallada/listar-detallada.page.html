@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>    
+    <ion-title>
+      Listar Recordatorio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      Mis Recordatorios
+    </ion-list-header>
+
+    <ion-item *ngFor="let recordatorio of recor" class="user-list">
+      <ion-label>
+        <h5>
+          <ion-icon name="person"></ion-icon> {{recordatorio.titulo}}
+        </h5>
+        <h5>
+          <ion-icon name="person"></ion-icon> {{recordatorio.t_actividad}}
+        </h5>
+        <h5>
+          <ion-icon name="person"></ion-icon> {{recordatorio.actividad}}
+        </h5>
+        <h5>
+          <ion-icon name="person"></ion-icon> {{recordatorio.fecha}}
+        </h5>
+        <h5>
+          <ion-icon name="person"></ion-icon> {{recordatorio.hora}}
+        </h5>
+        <h5>
+          <ion-icon name="person"></ion-icon> {{recordatorio.Direccion}}
+        </h5>
+      </ion-label>
+      
+      
+    </ion-item>
+       <ion-item>
+        <ion-button color="secondary" expand="block" (click)="volver()" >Mis Recorcatorios</ion-button>
+        <ion-button color="secondary" expand="block" (click)="addImagetoDB()">Borrar</ion-button>
+       </ion-item>
+        
+        
+  </ion-list>
+</ion-content>

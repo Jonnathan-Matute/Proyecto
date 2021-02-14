@@ -27,11 +27,7 @@ const routes: Routes = [
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule), canActivate : [NologinGuard]
 
   },
-  {
-    path: 'crear-recordatorio',
-    loadChildren: () => import('./crear-recordatorio/crear-recordatorio.module').then( m => m.CrearRecordatorioPageModule)
- 
-  },
+  
   {
     path: 'crear_recordatorio',
     loadChildren: () => import('./recordatorio/recordatorio.module').then( m => m.RecordatorioPageModule)
@@ -39,7 +35,15 @@ const routes: Routes = [
   {
     path: 'listar-recordatorios',
     loadChildren: () => import('./listar-recordatorios/listar-recordatorios.module').then( m => m.ListarRecordatoriosPageModule)
+  },  {
+    path: 'editar-recordatorio',
+    loadChildren: () => import('./editar-recordatorio/editar-recordatorio.module').then( m => m.EditarRecordatorioPageModule)
+  },
+  {
+    path: 'listar-detallada',
+    loadChildren: () => import('./listar-detallada/listar-detallada.module').then( m => m.ListarDetalladaPageModule)
   }
+
 ];
 
 @NgModule({

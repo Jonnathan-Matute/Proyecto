@@ -10,5 +10,30 @@
 </ion-header>
 
 <ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      Mis Recordatorios
+    </ion-list-header>
 
+    <ion-item *ngFor="let recordatorio of recor" class="user-list">
+      <ion-label>
+        
+        <h5>
+          <ion-icon name="person"></ion-icon> {{recordatorio.titulo}}
+        </h5>
+      </ion-label>
+      <div class="item-note" item-end>
+        <button ion-button clear (click)="eliminarRecordatorio(recordatorio.$uid)">
+          <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear [routerLink]="['/listar-detallada/', recordatorio.$uid]">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="eliminarRecordatorio(recordatorio.$uid)">
+          <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+      
+    </ion-item>
+  </ion-list>
 </ion-content>
