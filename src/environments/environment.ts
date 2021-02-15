@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  ApiKeyGoogleMaps: "AIzaSyAv9XC4EqgA8AF0P3wyrfuUrliMGOvwqxM"
 };
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -16,6 +17,8 @@ export const firebaseConfig = {
   appId: "1:86816565733:web:55d14b059b8b47945ea70c"
 
 };
+
+
 
 
 /*
