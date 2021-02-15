@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@capacitor/cli": "^2.4.6",
+    "@capacitor/core": "^2.4.6",
     "@ionic-native/core": "^5.31.1",
     "@ionic-native/geolocation": "^5.31.1",
     "@ionic-native/google-maps": "^5.5.0",

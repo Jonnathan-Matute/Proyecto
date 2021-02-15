@@ -1,3 +1,5 @@
+import { NumericValueAccessor } from "@ionic/angular";
+
 export class Recordatorio {
     uid: string;
     titulo: string;
@@ -5,8 +7,10 @@ export class Recordatorio {
     actividad: string;
     fecha: Date;
     hora: Date;
-    direccion: string;
+    ubicacion:{
+        lat: number;
+        lng: number;
+    };
     deleted: boolean;
     fotoUrl: string;
-
 }

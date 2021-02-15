@@ -16,6 +16,7 @@ import { FileSizeFormatPipe } from './file-size-format.pipe';
     IonicModule,
     RecordatorioPageRoutingModule
   ],
-  declarations: [RecordatorioPage,FileSizeFormatPipe]
+  declarations: [RecordatorioPage,FileSizeFormatPipe],
+  exports: [RecordatorioPage]
 })
 export class RecordatorioPageModule {}

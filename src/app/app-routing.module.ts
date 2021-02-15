@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path: 'listar-detallada',
     loadChildren: () => import('./listar-detallada/listar-detallada.module').then( m => m.ListarDetalladaPageModule)
+  },
+  {
+    path: 'googlemaps',
+    loadChildren: () => import('./googlemaps/googlemaps.module').then( m => m.GooglemapsPageModule)
   }
 
 ];

@@ -9,22 +9,23 @@ import { RecordatorioserviceService } from '../services/recordatorioservice.serv
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FirestorageService } from '../services/firestorage.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { LoadingController } from '@ionic/angular';
-declare var google;
+import { LoadingController, ModalController } from '@ionic/angular';
+import { GooglemapsPage } from '../googlemaps/googlemaps.page';
+
 @Component({
   selector: 'app-recordatorio',
   templateUrl: './recordatorio.page.html',
   styleUrls: ['./recordatorio.page.scss'],
 })
 export class RecordatorioPage implements OnInit {
-  mapRef = null;
+
   recor: Recordatorio = new Recordatorio();
   
   newImage='';
   newFile='';
   
-  constructor(public firestorageService: FirestorageService,  private route: ActivatedRoute, private router: Router,
-    public recordatorioService: RecordatorioserviceService,private geolocation:Geolocation,private loadingCtrl: LoadingController, private storage: AngularFireStorage, private database: AngularFirestore) {
+  constructor(private modalController: ModalController, public firestorageService: FirestorageService,  private route: ActivatedRoute, private router: Router,
+    public recordatorioService: RecordatorioserviceService, private storage: AngularFireStorage) {
 
     this.route.queryParams.subscribe(params => {
       console.log(params);
@@ -35,46 +36,31 @@ export class RecordatorioPage implements OnInit {
     });
   }
 
-  
+  ngOnInit() {}
 
-  ngOnInit() {
-    this.loadMap();
-  }
-
-  //guardar mapa
-  async loadMap() {
-    const loading = await this.loadingCtrl.create();
-    loading.present();
-    const myLatLng = await this.getLocation();
-    console.log(myLatLng);
-    const mapEle: HTMLElement = document.getElementById('map');
-    this.mapRef = new google.maps.Map(mapEle, {
-      center: myLatLng,
-      zoom: 12
-    });
-    google.maps.event
-    .addListenerOnce(this.mapRef, 'idle', () => {
-      loading.dismiss();
-      this.addMaker(myLatLng.lat, myLatLng.lng);
-    });
-  }
-
-  private addMaker(lat: number, lng: number) {
-    const marker = new google.maps.Marker({
-      position: { lat, lng },
-      map: this.mapRef,
-      title: 'Hello World!'
-    });
-  }
-
-  private async getLocation() {
-    const rta = await this.geolocation.getCurrentPosition();
-    return {
-      lat: rta.coords.latitude,
-      lng: rta.coords.longitude
+  async addDirection(){
+    const ubicacion = this.recor.ubicacion
+    let position = {
+      lat: -2.898116,
+      lng: -78.99958149999999
     };
-  }
+    if(ubicacion!== null){
+      position =  ubicacion;
+    }
 
+    const modalAdd = await this.modalController.create({
+      component: GooglemapsPage,
+      componentProps: {position}
+    });
+
+    await modalAdd.present();
+    const {data} = await modalAdd.onWillDismiss();
+    if(data){
+      console.log('data -> ', data);
+      this.recor.ubicacion =  data.pos;
+      console.log('This.cliente -> ', this.recor);
+    }
+  }
 
   //guardar demas
 
