@@ -28,7 +28,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 //google maps
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GooglemapsComponent } from './googlemaps/googlemaps.component';
-
+import { Geofence } from '@ionic-native/geofence/ngx';
 
 @NgModule({
   declarations: [AppComponent,GooglemapsComponent],
@@ -51,6 +51,7 @@ import { GooglemapsComponent } from './googlemaps/googlemaps.component';
     StatusBar,
     SplashScreen,
     Geolocation,
+    Geofence,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

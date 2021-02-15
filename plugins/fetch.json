@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-geofence": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-geofence"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

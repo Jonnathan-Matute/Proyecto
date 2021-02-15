@@ -23,6 +23,7 @@
     "@capacitor/cli": "^2.4.6",
     "@capacitor/core": "^2.4.6",
     "@ionic-native/core": "^5.31.1",
+    "@ionic-native/geofence": "^5.31.1",
     "@ionic-native/geolocation": "^5.31.1",
     "@ionic-native/google-maps": "^5.5.0",
     "@ionic-native/splash-screen": "^5.31.1",
@@ -52,6 +53,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "^5.2.2",
     "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-geofence": "^0.7.0",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
     "cordova-plugin-statusbar": "^2.4.3",
@@ -78,7 +80,8 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-geofence": {}
     },
     "platforms": [
       "android"
