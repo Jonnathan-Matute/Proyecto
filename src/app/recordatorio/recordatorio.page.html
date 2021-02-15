@@ -43,17 +43,12 @@
     <ion-label position="floating" >Direccion</ion-label>
     <ion-input [(ngModel)]="recor.direccion"></ion-input>
   </ion-item>
+
+  <ion-item>
+    <div id="map"></div>
+  </ion-item>
+    
   
-
-  <ion-card *ngIf="!isUploading && !isUploaded">
-    <ion-card-header>
-      <ion-card-title>Elija imágenes para cargar</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-button color="success" shape="round">
-        
-        <input id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)" />
-
   <ion-item>
     <ion-label>
       Foto:

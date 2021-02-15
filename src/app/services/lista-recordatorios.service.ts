@@ -12,16 +12,7 @@ export class ListaRecordatoriosService {
 
  
 
-  
-
-  // Get List
-  ObtenerRecordatorio() {
-    console.log("esto me devuelve la base")
-    console.log(this.db.collection("recordatorios").valueChanges())
-    return this.db.collection("recordatorios").valueChanges();
-    
-    
-  }
+ 
 /*
   // Update
   actualizarRecordatorio(id, apt: Recordatorio) {

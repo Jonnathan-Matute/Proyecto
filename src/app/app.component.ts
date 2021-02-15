@@ -14,7 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent {
 
-
+  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

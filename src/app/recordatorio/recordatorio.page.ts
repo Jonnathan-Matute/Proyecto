@@ -8,22 +8,23 @@ import { Recordatorio } from '../model/recordatorio';
 import { RecordatorioserviceService } from '../services/recordatorioservice.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FirestorageService } from '../services/firestorage.service';
-
-
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { LoadingController } from '@ionic/angular';
+declare var google;
 @Component({
   selector: 'app-recordatorio',
   templateUrl: './recordatorio.page.html',
   styleUrls: ['./recordatorio.page.scss'],
 })
 export class RecordatorioPage implements OnInit {
-
+  mapRef = null;
   recor: Recordatorio = new Recordatorio();
   
   newImage='';
   newFile='';
   
   constructor(public firestorageService: FirestorageService,  private route: ActivatedRoute, private router: Router,
-    public recordatorioService: RecordatorioserviceService,private storage: AngularFireStorage, private database: AngularFirestore) {
+    public recordatorioService: RecordatorioserviceService,private geolocation:Geolocation,private loadingCtrl: LoadingController, private storage: AngularFireStorage, private database: AngularFirestore) {
 
     this.route.queryParams.subscribe(params => {
       console.log(params);
@@ -34,8 +35,47 @@ export class RecordatorioPage implements OnInit {
     });
   }
 
+  
+
   ngOnInit() {
+    this.loadMap();
   }
+
+  //guardar mapa
+  async loadMap() {
+    const loading = await this.loadingCtrl.create();
+    loading.present();
+    const myLatLng = await this.getLocation();
+    const mapEle: HTMLElement = document.getElementById('map');
+    this.mapRef = new google.maps.Map(mapEle, {
+      center: myLatLng,
+      zoom: 12
+    });
+    google.maps.event
+    .addListenerOnce(this.mapRef, 'idle', () => {
+      loading.dismiss();
+      this.addMaker(myLatLng.lat, myLatLng.lng);
+    });
+  }
+
+  private addMaker(lat: number, lng: number) {
+    const marker = new google.maps.Marker({
+      position: { lat, lng },
+      map: this.mapRef,
+      title: 'Hello World!'
+    });
+  }
+
+  private async getLocation() {
+    const rta = await this.geolocation.getCurrentPosition();
+    return {
+      lat: rta.coords.latitude,
+      lng: rta.coords.longitude
+    };
+  }
+
+
+  //guardar demas
 
   async guardar(){
     console.log(this.recor);
@@ -61,10 +101,12 @@ export class RecordatorioPage implements OnInit {
       this.newFile = event.target.files[0];
       const reader = new FileReader();
       reader.onload = ((image)=> {
-        this.recor.fotoUrl = image.target.result as string;
+        //this.recor.fotoUrl = image.target.result as string;
       });
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+
+  
  
 }

@@ -23,13 +23,16 @@
         </h5>
       </ion-label>
       <div class="item-note" item-end>
-        <button ion-button clear (click)="eliminarRecordatorio(recordatorio.$uid)">
+        <button ion-button clear [routerLink]="['/listar-detallada/', recordatorio.$uid]">
           <ion-icon name="trash" style="zoom:2.0"></ion-icon>
         </button>
-        <button ion-button clear [routerLink]="['/listar-detallada/', recordatorio.$uid]">
-          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+
+        <button ion-button clear (click)="editarRecordatorio(recordatorio)">
+        <ion-icon name="create" style="zoom:2.0"></ion-icon>
+          
         </button>
-        <button ion-button clear (click)="eliminarRecordatorio(recordatorio.$uid)">
+        
+        <button ion-button clear (click)="confirmarBorrado(recordatorio.uid)">
           <ion-icon name="trash" style="zoom:2.0"></ion-icon>
         </button>
       </div>

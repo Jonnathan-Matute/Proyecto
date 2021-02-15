@@ -22,6 +22,14 @@ export class RecordatorioserviceService {
     refRecordatorio.doc(recordatorio.uid).set(Object.assign({}, recordatorio), { merge: true})
   }
 
+  ObtenerRecordatorio() {
+    console.log("esto me devuelve la base")
+    console.log(this.afs.collection("recordatorios").valueChanges())
+    return this.afs.collection("recordatorios").valueChanges();
+    
+    
+  }
+
   getRecordatorio(): Observable<any[]>{
     return this.afs.collection("recordatorios",
             ref => ref.where("deleted", "==", false)).valueChanges();
@@ -52,8 +60,9 @@ export class RecordatorioserviceService {
   }
 
   borrarRecordatorio(uid: string){
+    console.log("esto hace al borrar")
     const refRecordatorio = this.afs.collection("recordatorios");
-    
+    console.log(this.afs.collection("recordatorios"))
     const aux = {deleted: true};
     refRecordatorio.doc(uid).set( {...aux}, { merge: true})
   }

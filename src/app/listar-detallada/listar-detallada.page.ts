@@ -17,7 +17,7 @@ export class ListarDetalladaPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.recuperarRecordatorios();
+   
     
   }
   volver(){
@@ -25,15 +25,6 @@ export class ListarDetalladaPage implements OnInit {
 
     this.router.navigate(['/listar-detallada']);
   }
-  recuperarRecordatorios() {
-    this.ObtenerRecordatorio.ObtenerRecordatorio().subscribe(
-      respuesta => {
-        console.log("listar",respuesta);
-        this.recor=respuesta;
-      }
-    )
-
-    
-  } 
+  
 
 }
