@@ -8,4 +8,5 @@ export class Recordatorio {
     direccion: string;
     deleted: boolean;
     fotoUrl: string;
+
 }

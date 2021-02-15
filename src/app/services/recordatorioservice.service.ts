@@ -25,7 +25,8 @@ export class RecordatorioserviceService {
   ObtenerRecordatorio() {
     console.log("esto me devuelve la base")
     console.log(this.afs.collection("recordatorios").valueChanges())
-    return this.afs.collection("recordatorios").valueChanges();
+    return this.afs.collection("recordatorios",
+      ref => ref.where("deleted", "==", false)).valueChanges();
     
     
   }
@@ -59,10 +60,10 @@ export class RecordatorioserviceService {
                       .valueChanges();
   }
 
-  borrarRecordatorio(uid: string){
+  borrarRecor(uid: string){
     console.log("esto hace al borrar")
     const refRecordatorio = this.afs.collection("recordatorios");
-    console.log(this.afs.collection("recordatorios"))
+    
     const aux = {deleted: true};
     refRecordatorio.doc(uid).set( {...aux}, { merge: true})
   }

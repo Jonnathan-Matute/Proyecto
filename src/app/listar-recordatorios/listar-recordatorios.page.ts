@@ -48,7 +48,7 @@ export class ListarRecordatoriosPage implements OnInit {
   }
 
   async borrarRecordatorio(uid: string){
-    this.ObtenerRecordatorio.borrarRecordatorio(uid);
+    this.ObtenerRecordatorio.borrarRecor(uid);
     this.notificacionesService.notificacionToast("Registro borrado");
   }
 
