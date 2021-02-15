@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>    
     <ion-title>
-      Listar Recordatorio
+      Listar Recordatorio 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,28 +12,28 @@
 <ion-content>
   <ion-list class="ios list-ios hydrated">
     <ion-list-header class="ios hydrated">
-      Mis Recordatorios
+      Detalle Recordatorio
     </ion-list-header>
 
     <ion-item *ngFor="let recordatorio of recor" class="user-list">
       <ion-label>
         <h5>
-          <ion-icon name="person"></ion-icon> {{recordatorio.titulo}}
+           {{recordatorio.titulo}}
         </h5>
         <h5>
-          <ion-icon name="person"></ion-icon> {{recordatorio.t_actividad}}
+          {{recordatorio.t_actividad}}
         </h5>
         <h5>
-          <ion-icon name="person"></ion-icon> {{recordatorio.actividad}}
+           {{recordatorio.actividad}}
         </h5>
         <h5>
-          <ion-icon name="person"></ion-icon> {{recordatorio.fecha}}
+          {{recordatorio.fecha}}
         </h5>
         <h5>
-          <ion-icon name="person"></ion-icon> {{recordatorio.hora}}
+           {{recordatorio.hora}}
         </h5>
         <h5>
-          <ion-icon name="person"></ion-icon> {{recordatorio.Direccion}}
+           {{recordatorio.Direccion}}
         </h5>
       </ion-label>
       

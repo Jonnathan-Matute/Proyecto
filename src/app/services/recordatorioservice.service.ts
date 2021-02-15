@@ -67,4 +67,7 @@ export class RecordatorioserviceService {
     const aux = {deleted: true};
     refRecordatorio.doc(uid).set( {...aux}, { merge: true})
   }
+
+
+  
 }

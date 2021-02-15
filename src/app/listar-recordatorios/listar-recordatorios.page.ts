@@ -59,12 +59,5 @@ export class ListarRecordatoriosPage implements OnInit {
         this.borrarRecordatorio.bind(this, uid));
   }
 
-/*
-  eliminarRecordatorios(id) {
-    console.log(id)
-    if (window.confirm('Do you really want to delete?')) {
-      this.aptService.eliminarRecordatorio(id)
-    }
-  }
-*/
+
 }
