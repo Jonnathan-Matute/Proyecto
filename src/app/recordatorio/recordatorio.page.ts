@@ -46,6 +46,7 @@ export class RecordatorioPage implements OnInit {
     const loading = await this.loadingCtrl.create();
     loading.present();
     const myLatLng = await this.getLocation();
+    console.log(myLatLng);
     const mapEle: HTMLElement = document.getElementById('map');
     this.mapRef = new google.maps.Map(mapEle, {
       center: myLatLng,
@@ -101,7 +102,7 @@ export class RecordatorioPage implements OnInit {
       this.newFile = event.target.files[0];
       const reader = new FileReader();
       reader.onload = ((image)=> {
-        //this.recor.fotoUrl = image.target.result as string;
+        this.recor.fotoUrl = image.target.result as string;
       });
       reader.readAsDataURL(event.target.files[0]);
     }

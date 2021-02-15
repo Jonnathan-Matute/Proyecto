@@ -9,6 +9,7 @@ export class NotificacionesService {
 
   constructor(public toastController: ToastController,
     public alertController: AlertController) { }
+    
     async notificacionToast(text: string){
       const toast = await this.toastController.create({
         message: text,
