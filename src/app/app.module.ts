@@ -27,11 +27,12 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 //google maps
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent,GooglemapsComponent],
+  entryComponents: [GooglemapsComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

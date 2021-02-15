@@ -8,6 +8,8 @@ import { RecordatorioPageRoutingModule } from './recordatorio-routing.module';
 
 import { RecordatorioPage } from './recordatorio.page';
 import { FileSizeFormatPipe } from './file-size-format.pipe';
+import { GooglemapsComponent } from '../googlemaps/googlemaps.component';
+
 
 @NgModule({
   imports: [

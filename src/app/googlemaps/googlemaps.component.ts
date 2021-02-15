@@ -9,10 +9,10 @@ declare var google: any;
 
 @Component({
   selector: 'app-googlemaps',
-  templateUrl: './googlemaps.page.html',
-  styleUrls: ['./googlemaps.page.scss'],
+  templateUrl: './googlemaps.component.html',
+  styleUrls: ['./googlemaps.component.scss'],
 })
-export class GooglemapsPage implements OnInit {
+export class GooglemapsComponent implements OnInit {
 
   @Input() position = {
     lat: -2.898116,
@@ -29,7 +29,7 @@ export class GooglemapsPage implements OnInit {
   infowindow:any;
   positionSet: any
 
-  @ViewChild('map', { static: false }) divMap:ElementRef;
+  @ViewChild('map', { static: true }) divMap:ElementRef;
 
   constructor(private renderer:Renderer2,
     @Inject(DOCUMENT) private document,
