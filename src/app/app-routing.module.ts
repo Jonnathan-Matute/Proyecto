@@ -35,7 +35,8 @@ const routes: Routes = [
   {
     path: 'listar-recordatorios',
     loadChildren: () => import('./listar-recordatorios/listar-recordatorios.module').then( m => m.ListarRecordatoriosPageModule)
-  },  {
+  },
+  {
     path: 'editar-recordatorio',
     loadChildren: () => import('./editar-recordatorio/editar-recordatorio.module').then( m => m.EditarRecordatorioPageModule)
   },
@@ -45,7 +46,7 @@ const routes: Routes = [
   },
   {
     path: 'googlemaps',
-    loadChildren: () => import('./googlemaps/googlemaps.module').then( m => m.GooglemapsPageModule)
+    loadChildren: () => import('./googlemaps/googlemaps.module').then( m => m.GooglemapsModule)
   }
 
 ];

@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { GooglemapsPage } from './googlemaps.page';
+import { GooglemapsComponent } from './googlemaps.component';
 
 @NgModule({
-  declarations: [GooglemapsPage],
+  declarations: [GooglemapsComponent],
   imports: [
     CommonModule,
     IonicModule,
   ], exports:[
-    GooglemapsPage,
+    GooglemapsComponent
   ]
 })
-export class GooglemapsPageModule {}
+export class GooglemapsModule {}
