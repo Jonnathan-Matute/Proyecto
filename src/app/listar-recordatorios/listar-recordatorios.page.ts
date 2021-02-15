@@ -47,17 +47,6 @@ export class ListarRecordatoriosPage implements OnInit {
     this.router.navigate(['/crear_recordatorio'], navigationExtras);
   }
 
-  detalleRecordatorio(recordatorio: Recordatorio){
-
-    let navigationExtras: NavigationExtras = {
-      queryParams: {
-        recordatorio: recordatorio
-      }
-    };
-
-    this.router.navigate(['/listar-detallada'], navigationExtras);
-  }
-
   async borrarRecordatorio(uid: string){
     this.ObtenerRecordatorio.borrarRecor(uid);
     this.notificacionesService.notificacionToast("Registro borrado");

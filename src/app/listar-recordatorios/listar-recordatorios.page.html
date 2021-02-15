@@ -17,13 +17,12 @@
 
     <ion-item *ngFor="let recordatorio of recor" class="user-list">
       <ion-label>
-        
         <h5>
           <ion-icon name="person"></ion-icon> {{recordatorio.titulo}}
         </h5>
       </ion-label>
       <div class="item-note" item-end>
-        <button ion-button clear [routerLink]="detalleRecordatorio(recordatorio)">
+        <button ion-button clear [routerLink]="">
           <ion-icon name="trash" style="zoom:2.0"></ion-icon>
         </button>
 
