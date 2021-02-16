@@ -6,6 +6,9 @@ import { Router } from "@angular/router";
 //error mensaje
 import { AlertController } from '@ionic/angular';  
 
+import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app';
+
 
 @Component({
   selector: 'app-login',
@@ -15,11 +18,13 @@ import { AlertController } from '@ionic/angular';
 export class LoginPage implements OnInit {
 
   //variables
+  picture;
+  name;
   email: string;
   password: string;
 
   //inyectamos y tenemos el acceso a todos los metodos
-  constructor(private authService: AuthService, 
+  constructor(private authService: AuthService, private AFauth: AngularFireAuth,
     public router: Router, 
     public alertCtrl: AlertController) { }
 
@@ -66,5 +71,18 @@ export class LoginPage implements OnInit {
      }).catch(err => {
        alert('Los datos son incorrectos o no existe el usuario');
      })
+  }
+
+  async logGoogle() {
+    const res = await this.AFauth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    const user = res.user;
+    console.log(user);
+    this.picture = user.photoURL;
+    this.name = user.displayName;
+    this.email = user.email;
+ }
+
+  logFacebook() {
+    console.log('Login con Facebook');
   }
 }
