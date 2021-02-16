@@ -7,7 +7,11 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "<ion-header>\r\n  <ion-toolbar color=\"secondary\">\r\n    <ion-title text-center>Registro</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content padding>\r\n  <img class=\"icon\" src=\"assets/icon/register.svg\" alt=\"\">\r\n\r\n  <!--<ion-item>\r\n      <ion-label position=\"floating\" > Nombre</ion-label>\r\n      <ion-input type=\"text\" [(ngModel)]=\"name\" name=\"name\"></ion-input>\r\n    </ion-item>\r\n  -->\r\n\r\n  <ion-item>\r\n    <ion-label position=\"floating\" > Correo electrónico</ion-label>\r\n    <ion-input type=\"text\" [(ngModel)]=\"email\" name=\"email\"></ion-input>\r\n  </ion-item>\r\n\r\n  <ion-item>\r\n    <ion-label position=\"floating\" > Contraseña</ion-label>\r\n    <ion-input  type=\"password\" [(ngModel)]=\"password\" name=\"password\"></ion-input>\r\n  </ion-item>\r\n\r\n  <br>\r\n    <ion-button color=\"secondary\" expand=\"block\" (click)=\"OnSubmitRegister()\">Registrarse</ion-button>\r\n  <br>\r\n  <ion-button color=\"success\" expand=\"block\" routerLink=\"/login\">Ya tengo cuenta</ion-button>\r\n    \r\n</ion-content>"
+=======
+module.exports = "<ion-header>\n  <ion-toolbar color=\"secondary\">\n    <ion-title text-center>Registro</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <img class=\"icon\" src=\"assets/icon/register.svg\" alt=\"\">\n\n  <!--<ion-item>\n      <ion-label position=\"floating\" > Nombre</ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"name\" name=\"name\"></ion-input>\n    </ion-item>\n  -->\n\n  <ion-item>\n    <ion-label position=\"floating\" > Correo electrónico</ion-label>\n    <ion-input type=\"text\" [(ngModel)]=\"email\" name=\"email\"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"floating\" > Contraseña</ion-label>\n    <ion-input  type=\"password\" [(ngModel)]=\"password\" name=\"password\"></ion-input>\n  </ion-item>\n\n  <br>\n    <ion-button color=\"secondary\" expand=\"block\" (click)=\"OnSubmitRegister()\">Registrarse</ion-button>\n  <br>\n  <ion-button color=\"success\" expand=\"block\" routerLink=\"/login\">Ya tengo cuenta</ion-button>\n    \n</ion-content>"
+>>>>>>> Stashed changes
 
 /***/ }),
 

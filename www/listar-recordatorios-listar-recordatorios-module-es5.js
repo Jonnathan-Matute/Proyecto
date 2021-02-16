@@ -103,7 +103,11 @@ var ListarRecordatoriosPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "ion-icon {\n  color: #1e94d8;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlzdGFyLXJlY29yZGF0b3Jpb3MvQzpcXFVzZXJzXFxIZW5yeSBHdWFtYW5cXHdvcmtzcGFjZS1pb25pY1xcRmluYWxcXFByb3llY3RvL3NyY1xcYXBwXFxsaXN0YXItcmVjb3JkYXRvcmlvc1xcbGlzdGFyLXJlY29yZGF0b3Jpb3MucGFnZS5zY3NzIiwic3JjL2FwcC9saXN0YXItcmVjb3JkYXRvcmlvcy9saXN0YXItcmVjb3JkYXRvcmlvcy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9saXN0YXItcmVjb3JkYXRvcmlvcy9saXN0YXItcmVjb3JkYXRvcmlvcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taWNvbiB7XHJcbiAgICBjb2xvcjpyZ2IoMzAsIDE0OCwgMjE2KTtcclxuICB9IiwiaW9uLWljb24ge1xuICBjb2xvcjogIzFlOTRkODtcbn0iXX0= */"
+=======
+module.exports = "ion-icon {\n  color: #1e94d8;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlzdGFyLXJlY29yZGF0b3Jpb3MvQzpcXFVzZXJzXFxqbWF0dVxcT25lRHJpdmVcXEVzY3JpdG9yaW9cXFBMQVRBRk9STUFTIE3Dk1ZJTEVTIC0gVGltYmlcXFByb3llY3RvL3NyY1xcYXBwXFxsaXN0YXItcmVjb3JkYXRvcmlvc1xcbGlzdGFyLXJlY29yZGF0b3Jpb3MucGFnZS5zY3NzIiwic3JjL2FwcC9saXN0YXItcmVjb3JkYXRvcmlvcy9saXN0YXItcmVjb3JkYXRvcmlvcy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9saXN0YXItcmVjb3JkYXRvcmlvcy9saXN0YXItcmVjb3JkYXRvcmlvcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taWNvbiB7XHJcbiAgICBjb2xvcjpyZ2IoMzAsIDE0OCwgMjE2KTtcclxuICB9IiwiaW9uLWljb24ge1xuICBjb2xvcjogIzFlOTRkODtcbn0iXX0= */"
+>>>>>>> Stashed changes
 
 /***/ }),
 

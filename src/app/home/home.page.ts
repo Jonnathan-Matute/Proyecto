@@ -15,8 +15,22 @@ import { MenuController } from '@ionic/angular';
 })
 export class HomePage {
 
+  slides = [
+    {
+      img: 'assets/11.jpg',
+      titulo: 'Proyecto Ionic'
+    },
+    {
+      img: 'assets/1.jpg',
+      titulo: 'Recuerda siempre tus eventos'
+    },
+    {
+      img: 'assets/2.jpg',
+      titulo: 'Eventos',
+      des: 'Se puede crear, editar y eliminar los eventos'
+    }
+  ];
 
- 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

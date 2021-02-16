@@ -22,9 +22,25 @@
 <br>
 <ion-button color="success" expand="block" routerLink="/registro">Registrarse</ion-button>
 
+<ion-grid>
+  <ion-row>
+    <ion-col size="3">
+      <ion-button class="google" (click)="loginGoogle()">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="3">
+      <ion-button class="facebook" (click)="loginFcebook()">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-title color="secondary">Ionic | Durazno - Guaman - Matute</ion-title>
+    <ion-title color="secondary">Durazno - Guaman - Matute</ion-title>
   </ion-toolbar>
 </ion-footer>

@@ -520,6 +520,7 @@ var RecordatorioserviceService = /** @class */ (function () {
 
 
 
+<<<<<<< Updated upstream
 /***/ }),
 
 /***/ "./src/app/servicios/auth.service.ts":
@@ -591,6 +592,8 @@ var AuthService = /** @class */ (function () {
 
 
 
+=======
+>>>>>>> Stashed changes
 /***/ })
 
 }]);

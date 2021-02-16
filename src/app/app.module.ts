@@ -30,6 +30,12 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 import { Geofence } from '@ionic-native/geofence/ngx';
 
+//facebook
+import {Facebook, FacebookLoginResponse} from '@ionic-native/facebook/ngx';
+
+//Google
+import {GooglePlus} from '@ionic-native/google-plus/ngx'
+
 @NgModule({
   declarations: [AppComponent,GooglemapsComponent],
   entryComponents: [GooglemapsComponent],
@@ -48,6 +54,8 @@ import { Geofence } from '@ionic-native/geofence/ngx';
     HttpClientModule
   ],
   providers: [
+    GooglePlus,
+    Facebook,
     StatusBar,
     SplashScreen,
     Geolocation,

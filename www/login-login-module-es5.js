@@ -7,7 +7,11 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-title text-center>Iniciar sesión</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n\r\n<ion-content padding>\r\n  <div class=\"center\">\r\n    <img class=\"icon\" src=\"./../../assets/user.png\" alt=\"ICON\">\r\n  </div>\r\n<ion-item>\r\n  <ion-label position=\"floating\" > Correo electrónico</ion-label>\r\n  <ion-input type=\"text\" [(ngModel)]=\"email\" name=\"email\"></ion-input>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label position=\"floating\" > Contraseña</ion-label>\r\n  <ion-input [(ngModel)]=\"password\" type=\"password\" name=\"password\"></ion-input>\r\n</ion-item>\r\n<br>\r\n<ion-button (click)=\"onSubmitLogin()\" expand=\"block\">Ingresar</ion-button>\r\n<br>\r\n<ion-button color=\"success\" expand=\"block\" routerLink=\"/registro\">Registrarse</ion-button>\r\n\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-title color=\"secondary\">Ionic | Henry Guaman</ion-title>\r\n  </ion-toolbar>\r\n</ion-footer>"
+=======
+module.exports = "<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-title text-center>Iniciar sesión</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n\r\n<ion-content padding>\r\n  <div class=\"center\">\r\n    <img class=\"icon\" src=\"./../../assets/user.png\" alt=\"ICON\">\r\n  </div>\r\n<ion-item>\r\n  <ion-label position=\"floating\" > Correo electrónico</ion-label>\r\n  <ion-input type=\"text\" [(ngModel)]=\"email\" name=\"email\"></ion-input>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label position=\"floating\" > Contraseña</ion-label>\r\n  <ion-input [(ngModel)]=\"password\" type=\"password\" name=\"password\"></ion-input>\r\n</ion-item>\r\n<br>\r\n<ion-button (click)=\"onSubmitLogin()\" expand=\"block\">Ingresar</ion-button>\r\n<br>\r\n<ion-button color=\"success\" expand=\"block\" routerLink=\"/registro\">Registrarse</ion-button>\r\n\r\n<ion-grid>\r\n  <ion-row>\r\n    <ion-col size=\"3\">\r\n      <ion-button class=\"google\" (click)=\"loginGoogle()\">\r\n        <ion-icon name=\"logo-google\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n    <ion-col size=\"3\">\r\n      <ion-button class=\"facebook\" (click)=\"loginFcebook()\">\r\n        <ion-icon name=\"logo-facebook\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n</ion-grid>\r\n\r\n\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-title color=\"secondary\">Ionic | Jonnathan Matute</ion-title>\r\n  </ion-toolbar>\r\n</ion-footer>"
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -103,7 +107,11 @@ var LoginPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< Updated upstream
 module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLnBhZ2Uuc2NzcyJ9 */"
+=======
+module.exports = ".icon {\n  max-width: 32vh;\n  display: block;\n  margin: 0 auto;\n}\n\nion-input, ion-item {\n  --background: transparent;\n}\n\nion-content {\n  --background: aliceblue;\n}\n\n.text-danger {\n  color: #cf3c4f;\n}\n\n.google {\n  --background: #DB4437;\n}\n\n.facebook {\n  --background: #4267B2;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vQzpcXFVzZXJzXFxqbWF0dVxcT25lRHJpdmVcXEVzY3JpdG9yaW9cXFBMQVRBRk9STUFTIE3Dk1ZJTEVTIC0gVGltYmlcXFByb3llY3RvL3NyY1xcYXBwXFxsb2dpblxcbG9naW4ucGFnZS5zY3NzIiwic3JjL2FwcC9sb2dpbi9sb2dpbi5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFBO0VBQ0EsY0FBQTtFQUNBLGNBQUE7QUNDSjs7QURFQTtFQUNJLHlCQUFBO0FDQ0o7O0FEQ0E7RUFDSSx1QkFBQTtBQ0VKOztBRENBO0VBQ0ksY0FBQTtBQ0VKOztBRENBO0VBQ0kscUJBQUE7QUNFSjs7QURDQTtFQUNJLHFCQUFBO0FDRUoiLCJmaWxlIjoic3JjL2FwcC9sb2dpbi9sb2dpbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaWNvbntcclxuICAgIG1heC13aWR0aDogMzJ2aDtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgbWFyZ2luOiAwIGF1dG87XHJcbn1cclxuXHJcbmlvbi1pbnB1dCwgaW9uLWl0ZW17XHJcbiAgICAtLWJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG59XHJcbmlvbi1jb250ZW50e1xyXG4gICAgLS1iYWNrZ3JvdW5kOiBhbGljZWJsdWU7XHJcbn1cclxuXHJcbi50ZXh0LWRhbmdlcntcclxuICAgIGNvbG9yOiAjY2YzYzRmO1xyXG59XHJcblxyXG4uZ29vZ2xle1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjREI0NDM3O1xyXG59XHJcblxyXG4uZmFjZWJvb2t7XHJcbiAgICAtLWJhY2tncm91bmQ6ICM0MjY3QjI7XHJcbn0iLCIuaWNvbiB7XG4gIG1heC13aWR0aDogMzJ2aDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1hcmdpbjogMCBhdXRvO1xufVxuXG5pb24taW5wdXQsIGlvbi1pdGVtIHtcbiAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbn1cblxuaW9uLWNvbnRlbnQge1xuICAtLWJhY2tncm91bmQ6IGFsaWNlYmx1ZTtcbn1cblxuLnRleHQtZGFuZ2VyIHtcbiAgY29sb3I6ICNjZjNjNGY7XG59XG5cbi5nb29nbGUge1xuICAtLWJhY2tncm91bmQ6ICNEQjQ0Mzc7XG59XG5cbi5mYWNlYm9vayB7XG4gIC0tYmFja2dyb3VuZDogIzQyNjdCMjtcbn0iXX0= */"
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -155,7 +163,11 @@ var LoginPage = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.alertCtrl.create({
                             header: 'Warning !',
                             subHeader: 'Hubo un error!',
+<<<<<<< Updated upstream
                             message: 'Verifique los datos =(',
+=======
+                            message: 'Verifique los datos',
+>>>>>>> Stashed changes
                             buttons: ['OK']
                         })];
                     case 1:
@@ -172,6 +184,25 @@ var LoginPage = /** @class */ (function () {
             });
         });
     };
+<<<<<<< Updated upstream
+=======
+    LoginPage.prototype.loginGoogle = function () {
+        var _this = this;
+        this.authService.loginWithGoogle().then(function (res) {
+            _this.router.navigate(['/home']);
+        }).catch(function (err) {
+            alert('Los datos son incorrectos o no existe el usuario');
+        });
+    };
+    LoginPage.prototype.loginFacebook = function () {
+        var _this = this;
+        this.authService.loginWithFacebook().then(function (res) {
+            _this.router.navigate(['/home']);
+        }).catch(function (err) {
+            alert('Los datos son incorrectos o no existe el usuario');
+        });
+    };
+>>>>>>> Stashed changes
     LoginPage.ctorParameters = function () { return [
         { type: _servicios_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },

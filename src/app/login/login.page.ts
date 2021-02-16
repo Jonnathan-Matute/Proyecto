@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
     const alert = await this.alertCtrl.create({  
       header: 'Warning !',  
       subHeader: 'Hubo un error!',  
-      message: 'Verifique los datos =(',  
+      message: 'Verifique los datos',  
       buttons: ['OK']  
     });  
     await alert.present();  
@@ -52,4 +52,19 @@ export class LoginPage implements OnInit {
     console.log(result);  
   }
   
+  loginGoogle(){
+    this.authService.loginWithGoogle().then(res => {
+      this.router.navigate(['/home']);
+    }).catch(err => {
+      alert('Los datos son incorrectos o no existe el usuario');
+    })
+  }
+
+  loginFacebook(){
+     this.authService.loginWithFacebook().then(res => {
+       this.router.navigate(['/home']);
+     }).catch(err => {
+       alert('Los datos son incorrectos o no existe el usuario');
+     })
+  }
 }

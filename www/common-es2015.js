@@ -789,6 +789,7 @@ RecordatorioserviceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 
 
+<<<<<<< Updated upstream
 /***/ }),
 
 /***/ "./src/app/servicios/auth.service.ts":
@@ -856,6 +857,8 @@ AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 
 
+=======
+>>>>>>> Stashed changes
 /***/ })
 
 }]);
