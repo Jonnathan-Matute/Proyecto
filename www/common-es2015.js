@@ -694,9 +694,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/geofence/ngx */ "./node_modules/@ionic-native/geofence/ngx/index.js");
-
+/* harmony import */ var _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/geofence/ngx */ "./node_modules/@ionic-native/geofence/ngx/index.js");
 
 
 
@@ -707,7 +705,7 @@ let RecordatorioserviceService = class RecordatorioserviceService {
         this.geofence = geofence;
         geofence.initialize().then(
         // resolved promise does not return a value
-        () => console.log('Geofence Plugin Ready'), (err) => console.log(err));
+        () => console.log('Iniciando Georeferenciacion'), (err) => console.log(err));
     }
     saveRecordatorio(recordatorio) {
         this.Lat = recordatorio.ubicacion.lat;
@@ -730,23 +728,7 @@ let RecordatorioserviceService = class RecordatorioserviceService {
         return this.afs.collection("recordatorios", ref => ref.where("deleted", "==", false)).valueChanges();
     }
     getRecordatorioById(uid) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            try {
-                let aux = yield this.afs.collection("recordatorios", ref => ref.where('uid', '==', uid))
-                    .valueChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["first"])()).toPromise().then(doc => {
-                    return doc;
-                }).catch(error => {
-                    throw error;
-                });
-                if (aux == null)
-                    return {};
-                return aux[0];
-            }
-            catch (error) {
-                console.error("Error get recordatorios ById", error);
-                throw error;
-            }
-        });
+        return this.afs.collection('recordatorios', res => res.where('uid', '==', uid)).get();
     }
     getRecordatorioById2(uid) {
         return this.afs.collection("recordatorios", ref => ref.where('uid', '==', uid))
@@ -778,13 +760,13 @@ let RecordatorioserviceService = class RecordatorioserviceService {
 };
 RecordatorioserviceService.ctorParameters = () => [
     { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] },
-    { type: _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_4__["Geofence"] }
+    { type: _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_3__["Geofence"] }
 ];
 RecordatorioserviceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_4__["Geofence"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_3__["Geofence"]])
 ], RecordatorioserviceService);
 
 

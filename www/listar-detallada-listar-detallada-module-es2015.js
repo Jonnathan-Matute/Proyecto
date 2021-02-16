@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>    \r\n    <ion-title>\r\n      Listar Recordatorio \r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list class=\"ios list-ios hydrated\">\r\n    <ion-list-header class=\"ios hydrated\">\r\n      Detalle Recordatorio\r\n    </ion-list-header>\r\n\r\n    <ion-item *ngFor=\"let recordatorio of recor\" class=\"user-list\">\r\n      <ion-label>\r\n        <h5>\r\n           {{recordatorio.titulo}}\r\n        </h5>\r\n        <h5>\r\n          {{recordatorio.t_actividad}}\r\n        </h5>\r\n        <h5>\r\n           {{recordatorio.actividad}}\r\n        </h5>\r\n        <h5>\r\n          {{recordatorio.fecha}}\r\n        </h5>\r\n        <h5>\r\n           {{recordatorio.hora}}\r\n        </h5>\r\n        <h5>\r\n           {{recordatorio.Direccion}}\r\n        </h5>\r\n      </ion-label>\r\n      \r\n      \r\n    </ion-item>\r\n       <ion-item>\r\n        <ion-button color=\"secondary\" expand=\"block\" (click)=\"volver()\" >Mis Recorcatorios</ion-button>\r\n        <ion-button color=\"secondary\" expand=\"block\" (click)=\"addImagetoDB()\">Borrar</ion-button>\r\n       </ion-item>\r\n        \r\n        \r\n  </ion-list>\r\n</ion-content>\r\n"
+module.exports = "<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>    \r\n    <ion-title>\r\n      Listar Recordatorio \r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list class=\"ios list-ios hydrated\">\r\n    <ion-list-header class=\"ios hydrated\">\r\n      Detalle Recordatorio\r\n    </ion-list-header>\r\n      \r\n    <div *ngIf=\"actividad\">\r\n    <ion-card>\r\n\r\n    <ion-item>\r\n      \r\n      <ion-label>Titulo Actividad:</ion-label> <br>\r\n      <ion-label>{{actividad.titulo}}</ion-label>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label>Tipo de Actividad: </ion-label><br>\r\n      <ion-label>{{actividad.t_actividad}}</ion-label>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label>Actividad: </ion-label><br>\r\n      <ion-label>{{actividad.actividad}}</ion-label>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label>Fecha: </ion-label><br>\r\n      <ion-label>{{actividad.fecha}}</ion-label>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label>Hora: </ion-label><br>\r\n      <ion-label>{{actividad.hora}}</ion-label>\r\n    </ion-item>\r\n\r\n    <ion-card-content>\r\n      <img [src]=\"actividad.fotoUrl\">\r\n    </ion-card-content>\r\n\r\n    <ion-item>\r\n    <ion-button  color=\"secondary\" expand=\"block\" (click)=\"volver()\">Cerrar</ion-button>\r\n    </ion-item>\r\n\r\n  </ion-card>\r\n\r\n    </div>\r\n        \r\n        \r\n  </ion-list>\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -31,7 +31,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: '',
+        path: ':uid',
         component: _listar_detallada_page__WEBPACK_IMPORTED_MODULE_3__["ListarDetalladaPage"]
     }
 ];
@@ -115,26 +115,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _services_lista_recordatorios_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/lista-recordatorios.service */ "./src/app/services/lista-recordatorios.service.ts");
+/* harmony import */ var _services_recordatorioservice_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/recordatorioservice.service */ "./src/app/services/recordatorioservice.service.ts");
+
 
 
 
 
 let ListarDetalladaPage = class ListarDetalladaPage {
-    constructor(ObtenerRecordatorio, route, router) {
+    constructor(ObtenerRecordatorio, route, router, recordatorioServicio) {
         this.ObtenerRecordatorio = ObtenerRecordatorio;
         this.route = route;
         this.router = router;
+        this.recordatorioServicio = recordatorioServicio;
     }
     ngOnInit() {
+        this.cargarDetalleActividad();
     }
     volver() {
-        this.router.navigate(['/listar-detallada']);
+        this.router.navigate(['/listar-recordatorios']);
+    }
+    cargarDetalleActividad() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield this.route.params.subscribe(params => {
+                this.actividadId = params.uid;
+            });
+            yield this.recordatorioServicio.getRecordatorioById(this.actividadId).subscribe(res => {
+                console.log("esto llega");
+                console.log(res);
+                this.actividad = res.docs[0].data();
+            });
+        });
     }
 };
 ListarDetalladaPage.ctorParameters = () => [
     { type: _services_lista_recordatorios_service__WEBPACK_IMPORTED_MODULE_3__["ListaRecordatoriosService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _services_recordatorioservice_service__WEBPACK_IMPORTED_MODULE_4__["RecordatorioserviceService"] }
 ];
 ListarDetalladaPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -143,7 +160,7 @@ ListarDetalladaPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [__webpack_require__(/*! ./listar-detallada.page.scss */ "./src/app/listar-detallada/listar-detallada.page.scss")]
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_lista_recordatorios_service__WEBPACK_IMPORTED_MODULE_3__["ListaRecordatoriosService"],
-        _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _services_recordatorioservice_service__WEBPACK_IMPORTED_MODULE_4__["RecordatorioserviceService"]])
 ], ListarDetalladaPage);
 
 

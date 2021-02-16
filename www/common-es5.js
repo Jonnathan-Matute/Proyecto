@@ -416,9 +416,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/geofence/ngx */ "./node_modules/@ionic-native/geofence/ngx/index.js");
-
+/* harmony import */ var _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/geofence/ngx */ "./node_modules/@ionic-native/geofence/ngx/index.js");
 
 
 
@@ -429,7 +427,7 @@ var RecordatorioserviceService = /** @class */ (function () {
         this.geofence = geofence;
         geofence.initialize().then(
         // resolved promise does not return a value
-        function () { return console.log('Geofence Plugin Ready'); }, function (err) { return console.log(err); });
+        function () { return console.log('Iniciando Georeferenciacion'); }, function (err) { return console.log(err); });
     }
     RecordatorioserviceService.prototype.saveRecordatorio = function (recordatorio) {
         this.Lat = recordatorio.ubicacion.lat;
@@ -452,31 +450,7 @@ var RecordatorioserviceService = /** @class */ (function () {
         return this.afs.collection("recordatorios", function (ref) { return ref.where("deleted", "==", false); }).valueChanges();
     };
     RecordatorioserviceService.prototype.getRecordatorioById = function (uid) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var aux, error_1;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.afs.collection("recordatorios", function (ref) { return ref.where('uid', '==', uid); })
-                                .valueChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["first"])()).toPromise().then(function (doc) {
-                                return doc;
-                            }).catch(function (error) {
-                                throw error;
-                            })];
-                    case 1:
-                        aux = _a.sent();
-                        if (aux == null)
-                            return [2 /*return*/, {}];
-                        return [2 /*return*/, aux[0]];
-                    case 2:
-                        error_1 = _a.sent();
-                        console.error("Error get recordatorios ById", error_1);
-                        throw error_1;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
+        return this.afs.collection('recordatorios', function (res) { return res.where('uid', '==', uid); }).get();
     };
     RecordatorioserviceService.prototype.getRecordatorioById2 = function (uid) {
         return this.afs.collection("recordatorios", function (ref) { return ref.where('uid', '==', uid); })
@@ -507,13 +481,13 @@ var RecordatorioserviceService = /** @class */ (function () {
     };
     RecordatorioserviceService.ctorParameters = function () { return [
         { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] },
-        { type: _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_4__["Geofence"] }
+        { type: _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_3__["Geofence"] }
     ]; };
     RecordatorioserviceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_4__["Geofence"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], _ionic_native_geofence_ngx__WEBPACK_IMPORTED_MODULE_3__["Geofence"]])
     ], RecordatorioserviceService);
     return RecordatorioserviceService;
 }());
