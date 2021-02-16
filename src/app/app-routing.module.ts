@@ -6,8 +6,9 @@ import { AuthGuard } from "./guards/auth.guard";
 
 //no login
 import { NologinGuard } from "./guards/nologin.guard";
-
+import { ListarDetalladaPage } from './listar-detallada/listar-detallada.page';
 const routes: Routes = [
+ 
   {
     path: '',
     redirectTo: 'login',

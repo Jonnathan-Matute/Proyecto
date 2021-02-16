@@ -19,7 +19,7 @@ export class RecordatorioserviceService {
 
     geofence.initialize().then(
       // resolved promise does not return a value
-      () => console.log('Geofence Plugin Ready'),
+      () => console.log('Iniciando Georeferenciacion'),
       (err) => console.log(err)
     )
    }
@@ -53,22 +53,9 @@ export class RecordatorioserviceService {
             ref => ref.where("deleted", "==", false)).valueChanges();
   }
 
-  async getRecordatorioById(uid: string){
-    try{
-        let aux = await this.afs.collection("recordatorios", 
-            ref => ref.where('uid', '==', uid))
-                      .valueChanges().pipe(first()).toPromise().then(doc => {                    	  
-                          return doc;
-                      }).catch(error => {
-                          throw error;
-                      });
-        if(aux==null)
-            return {};
-        return aux[0];
-    }catch(error){
-      console.error("Error get recordatorios ById", error);
-      throw error;
-    } 
+  getRecordatorioById(uid: string){
+    return this.afs.collection('recordatorios',res => res.where('uid','==',uid)).get();
+    
   }
 
   getRecordatorioById2(uid: string) :Observable<any>{

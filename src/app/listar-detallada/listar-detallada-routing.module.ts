@@ -5,7 +5,7 @@ import { ListarDetalladaPage } from './listar-detallada.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':uid',
     component: ListarDetalladaPage
   }
 ];

@@ -14,35 +14,43 @@
     <ion-list-header class="ios hydrated">
       Detalle Recordatorio
     </ion-list-header>
+      
+    <div *ngIf="actividad">
+    <ion-card>
 
-    <ion-item *ngFor="let recordatorio of recor" class="user-list">
-      <ion-label>
-        <h5>
-           {{recordatorio.titulo}}
-        </h5>
-        <h5>
-          {{recordatorio.t_actividad}}
-        </h5>
-        <h5>
-           {{recordatorio.actividad}}
-        </h5>
-        <h5>
-          {{recordatorio.fecha}}
-        </h5>
-        <h5>
-           {{recordatorio.hora}}
-        </h5>
-        <h5>
-           {{recordatorio.Direccion}}
-        </h5>
-      </ion-label>
+    <ion-item>
       
-      
+      <ion-label>Titulo Actividad:</ion-label> <br>
+      <ion-label>{{actividad.titulo}}</ion-label>
     </ion-item>
-       <ion-item>
-        <ion-button color="secondary" expand="block" (click)="volver()" >Mis Recorcatorios</ion-button>
-        <ion-button color="secondary" expand="block" (click)="addImagetoDB()">Borrar</ion-button>
-       </ion-item>
+    <ion-item>
+      <ion-label>Tipo de Actividad: </ion-label><br>
+      <ion-label>{{actividad.t_actividad}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Actividad: </ion-label><br>
+      <ion-label>{{actividad.actividad}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha: </ion-label><br>
+      <ion-label>{{actividad.fecha}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora: </ion-label><br>
+      <ion-label>{{actividad.hora}}</ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      <img [src]="actividad.fotoUrl">
+    </ion-card-content>
+
+    <ion-item>
+    <ion-button  color="secondary" expand="block" (click)="volver()">Cerrar</ion-button>
+    </ion-item>
+
+  </ion-card>
+
+    </div>
         
         
   </ion-list>
